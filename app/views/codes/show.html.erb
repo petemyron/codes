@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Code:</b>
+  <%= @code.code %>
+</p>
+
+<p>
+  <b>Productid:</b>
+  <%= @code.productId %>
+</p>
+
+<p>
+  <b>Amount:</b>
+  <%= @code.amount %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @code.description %>
+</p>
+
+<p>
+  <b>Currency:</b>
+  <%= @code.currency %>
+</p>
+
+
+<%= link_to 'Edit', edit_code_path(@code) %> |
+<%= link_to 'Back', codes_path %>

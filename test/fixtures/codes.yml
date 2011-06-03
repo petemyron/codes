@@ -1,0 +1,15 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  code: MyString
+  productId: MyString
+  amount: MyString
+  description: MyText
+  currency: MyString
+
+two:
+  code: MyString
+  productId: MyString
+  amount: MyString
+  description: MyText
+  currency: MyString
