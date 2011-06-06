@@ -1,6 +1,10 @@
 Codes::Application.routes.draw do
   resources :codes
 
+#  match ':controller/xml/:code', :controller => 'codes', :action => 'xml'
+
+  match 'codes/lookup/:code' => 'codes#lookup'
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

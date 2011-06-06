@@ -3,10 +3,11 @@
 <table>
   <tr>
     <th>Code</th>
-    <th>Productid</th>
+    <th>Product ID</th>
     <th>Amount</th>
     <th>Description</th>
     <th>Currency</th>
+    <th></th>
     <th></th>
     <th></th>
     <th></th>
@@ -19,6 +20,7 @@
     <td><%= code.amount %></td>
     <td><%= code.description %></td>
     <td><%= code.currency %></td>
+    <td><%= link_to 'XML', :action => "lookup", :code => code.code, :format => "xml" %></td>
     <td><%= link_to 'Show', code %></td>
     <td><%= link_to 'Edit', edit_code_path(code) %></td>
     <td><%= link_to 'Destroy', code, :confirm => 'Are you sure?', :method => :delete %></td>
@@ -29,3 +31,4 @@
 <br />
 
 <%= link_to 'New Code', new_code_path %>
+

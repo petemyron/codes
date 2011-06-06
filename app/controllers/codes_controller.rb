@@ -21,6 +21,19 @@ class CodesController < ApplicationController
     end
   end
 
+  # GET /codes/lookup/[:code].xml
+  def lookup
+    @code = Code.find_by_code(params[:code])
+
+    respond_to do |format|
+#      format.any do
+#        render :xml => @code.to_xml
+#      end
+      format.xml # lookup.xml.builder
+#      format.xml  { render :xml => @code }
+    end
+  end
+
   # GET /codes/new
   # GET /codes/new.xml
   def new
@@ -81,3 +94,4 @@ class CodesController < ApplicationController
     end
   end
 end
+
