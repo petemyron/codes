@@ -21,16 +21,25 @@ class CodesController < ApplicationController
     end
   end
 
-  # GET /codes/lookup/[:code].xml
+
+  # GET /codes/lookup/[:code].xml #  uses the custom builder markup below
+  # GET /codes/lookup/[:code]     # using the custom builder markup below (since excluding ".xml" in the URL renders ALL fields)
   def lookup
     @code = Code.find_by_code(params[:code])
 
+    # Make a custom xml builder (since excluding ".xml" in the URL renders ALL fields)
+    xml = Builder::XmlMarkup.new(:indent=>2)
+    xml.instruct!
+    xml.code do
+      xml.amount @code.amount
+      xml.currency @code.currency
+      xml.description @code.description
+      xml.updated_at @code.updated_at
+    end
+
     respond_to do |format|
-#      format.any do
-#        render :xml => @code.to_xml
-#      end
-      format.xml # lookup.xml.builder
-#      format.xml  { render :xml => @code }
+      format.any  { render :xml => xml.target! }
+#      format.html { render :xml => xml.target! }
     end
   end
 
