@@ -1,4 +1,6 @@
 class CodesController < ApplicationController
+  require 'builder'
+
   # GET /codes
   # GET /codes.xml
   def index
