@@ -20,7 +20,7 @@
     <td><%= code.amount %></td>
     <td><%= code.description %></td>
     <td><%= code.currency %></td>
-    <td><%= link_to 'XML', :action => "lookup", :code => code.code, :format => "xml" %></td>
+    <td><%= link_to 'XML', :action => "lookup", :code => code.code %></td>
     <td><%= link_to 'Show', code %></td>
     <td><%= link_to 'Edit', edit_code_path(code) %></td>
     <td><%= link_to 'Destroy', code, :confirm => 'Are you sure?', :method => :delete %></td>

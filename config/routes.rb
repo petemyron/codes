@@ -3,7 +3,7 @@ Codes::Application.routes.draw do
 
 #  match ':controller/xml/:code', :controller => 'codes', :action => 'xml'
 
-  match 'codes/lookup/:code' => 'codes#lookup'
+  match 'lookup/:code' => 'codes#lookup'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -54,7 +54,7 @@ Codes::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  # root :to => "welcome#index"
+  root :to => "codes#index"
 
   # See how all your routes lay out with "rake routes"
 
