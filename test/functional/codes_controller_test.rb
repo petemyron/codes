@@ -3,6 +3,17 @@ require 'test_helper'
 class CodesControllerTest < ActionController::TestCase
   setup do
     @code = codes(:one)
+    @update = {
+      :code => 'MyString3',
+      :productId => 'MyString',
+      :amount => 'MyString',
+      :description => 'MyText',
+      :currency => 'MyString',
+      :organization => 'MyString',
+      :email => 'MyString',
+      :support_contact => 'MyString',
+      :support_phone => 'MyString'
+    }
   end
 
   test "should get index" do
@@ -18,7 +29,7 @@ class CodesControllerTest < ActionController::TestCase
 
   test "should create code" do
     assert_difference('Code.count') do
-      post :create, :code => @code.attributes
+      post :create, :code => @update
     end
 
     assert_redirected_to code_path(assigns(:code))
@@ -35,7 +46,7 @@ class CodesControllerTest < ActionController::TestCase
   end
 
   test "should update code" do
-    put :update, :id => @code.to_param, :code => @code.attributes
+    put :update, :id => @code.to_param, :code => @code
     assert_redirected_to code_path(assigns(:code))
   end
 
@@ -45,5 +56,10 @@ class CodesControllerTest < ActionController::TestCase
     end
 
     assert_redirected_to codes_path
+  end
+  
+  test 'should show XML' do
+    get :lookup, :code => @code.code
+    assert_tag :tag => "code"
   end
 end

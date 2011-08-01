@@ -7,6 +7,10 @@
     <th>Amount</th>
     <th>Description</th>
     <th>Currency</th>
+    <th>Organization</th>
+    <th>Email</th>
+    <th>Support Contact</th>
+    <th>Support Phone</th>
     <th></th>
     <th></th>
     <th></th>
@@ -20,6 +24,10 @@
     <td><%= code.amount %></td>
     <td><%= code.description %></td>
     <td><%= code.currency %></td>
+    <td><%= code.organization %></td>
+    <td><%= code.email %></td>
+    <td><%= code.support_contact %></td>
+    <td><%= code.support_phone %></td>
     <td><%= link_to 'XML', :action => "lookup", :code => code.code %></td>
     <td><%= link_to 'Show', code %></td>
     <td><%= link_to 'Edit', edit_code_path(code) %></td>

@@ -33,9 +33,13 @@ class CodesController < ApplicationController
     xml = Builder::XmlMarkup.new(:indent=>2)
     xml.instruct!
     xml.code do
+      xml.description @code.description
       xml.amount @code.amount
       xml.currency @code.currency
-      xml.description @code.description
+      xml.organization @code.organization
+      xml.email @code.email
+      xml.support_contact @code.support_contact
+      xml.support_phone @code.support_phone
       xml.updated_at @code.updated_at
     end
 

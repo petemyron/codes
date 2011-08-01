@@ -6,10 +6,18 @@ one:
   amount: MyString
   description: MyText
   currency: MyString
+  organization: MyString
+  email: MyString
+  support_contact: MyString
+  support_phone: MyString
 
 two:
-  code: MyString
+  code: MyString2
   productId: MyString
   amount: MyString
   description: MyText
   currency: MyString
+  organization: MyString
+  email: MyString
+  support_contact: MyString
+  support_phone: MyString
